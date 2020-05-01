@@ -1,2 +1,2 @@
 # LeetCode
-Solutions by me to some of the common problems found.
+Python solutions to some of the common problems found.
