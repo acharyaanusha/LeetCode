@@ -1,0 +1,10 @@
+class Solution:
+    def sortedSquares(self, A: List[int]) -> List[int]:
+        return sorted([x*x for x in A]) 
+        ```OR```
+        B=[]
+        i=0
+        for j in (A):
+            B.append(j*j)
+        B.sort()
+        return B
