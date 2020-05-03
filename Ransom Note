@@ -1,0 +1,22 @@
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        for item in ransomNote:
+            if not item in magazine:
+                return False
+            magazine = magazine.replace(item, "", 1)
+        return True
+```OR```        
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        ran = Counter(ransomNote)
+        if not ran:
+            return True 
+        for m in magazine:
+            if m in ran:
+                if ran[m] > 1:
+                    ran[m] -= 1
+                else:
+                    ran.pop(m)
+                    if len(ran) == 0:
+                        return True
+        return False
