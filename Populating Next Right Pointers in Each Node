@@ -11,9 +11,9 @@ class Node:
 class Solution:
     def connect(self, root: 'Node') -> 'Node':
         parent = root
-        while parent:
+        while parent and parent.left:
             next_level = parent.left
-            while parent and parent.left:
+            while parent:
                 parent.left.next = parent.right
                 if parent.next:
                     parent.right.next = parent.next.left
