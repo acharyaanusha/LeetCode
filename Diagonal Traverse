@@ -1,0 +1,14 @@
+class Solution:
+    def findDiagonalOrder(self, matrix: List[List[int]]) -> List[int]:
+        if not matrix:
+            return
+        r,c = len(matrix),len(matrix[0])
+        res = [deque() for _ in range(r+c-1)]
+        for i in range(r):
+            for j in range(c):
+                dist = i+j
+                if dist&1:
+                    res[dist].append(matrix[i][j])
+                else:
+                    res[dist].appendleft(matrix[i][j])
+        return sum(res,deque())
