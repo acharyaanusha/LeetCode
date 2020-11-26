@@ -1,0 +1,20 @@
+class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        p1 = 0
+        p2 = n
+        res = []
+        while p1<n:
+            res.append(nums[p1])
+            res.append(nums[p2])
+            p1=p1+1
+            p2=p2+1
+        return res
+        
+        #OR
+        
+        res = []
+        for i in range(n):
+            res.append(nums[i])
+            res.append(nums[i+n])
+            
+        return res
