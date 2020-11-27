@@ -1,0 +1,18 @@
+from collections import Counter
+class Solution:
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        c = Counter(nums)
+        for i in c:
+            if c[i]>1:
+                return True
+        return False
+        
+    #OR
+    
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        s = set()
+        for n in nums:
+            if n in s:
+                return True
+            s.add(n)
+        return False
