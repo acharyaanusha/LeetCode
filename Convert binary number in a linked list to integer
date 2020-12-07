@@ -7,6 +7,14 @@ class Solution:
     def getDecimalValue(self, head: ListNode) -> int:
         sol = 0
         while head:
-            sol= (sol<<1)+head.val
+            sol= (sol<<1)+head.val 
+            head = head.next
+        return sol
+        
+        #OR
+        
+        sol = 0
+        while head:
+            sol= (sol*2)+head.val
             head = head.next
         return sol
