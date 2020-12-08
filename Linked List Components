@@ -13,3 +13,13 @@ class Solution:
               ans+=1
             cur = cur.next
           return ans
+          
+          #OR
+          
+        cur = head
+        ans =0
+        while cur:
+            if cur.val in G and (cur.next==None or cur.next.val not in G):
+                ans+=1
+            cur = cur.next
+        return ans
