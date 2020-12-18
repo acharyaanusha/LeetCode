@@ -6,5 +6,5 @@ class Solution:
             last = n%10
             prod*=last
             total+=last
-            n=n//10
+            n//=10
         return (prod-total)
