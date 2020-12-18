@@ -7,3 +7,7 @@ class Solution:
         for word in word2:
             s2+=word
         return s1==s2
+    
+    #OR
+    
+        return ''.join(word1)==''.join(word2)
