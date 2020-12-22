@@ -2,14 +2,13 @@ class Solution:
     def balancedStringSplit(self, s: str) -> int:
         balance =0
         pair =0
-        l="L"
-        r="R"
+        
         for char in s:
-            if char == l:
+            if char == "L":
                 balance+=1
                 if balance==0:
                     pair+=1
-            if char == r:
+            if char == "R":
                 balance-=1
                 if balance==0:
                     pair+=1
