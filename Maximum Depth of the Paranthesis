@@ -1,0 +1,12 @@
+class Solution:
+    def maxDepth(self, s: str) -> int:
+        left =0
+        right = 0
+        depth = 0
+        for eachS in s:
+            if eachS=="(":
+                left+=1
+            if eachS==")":
+                depth = max(left-right,depth)
+                right+=1
+        return depth
