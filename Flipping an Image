@@ -4,3 +4,13 @@ class Solution:
               for i in range((len(row)+1)//2):
                     row[i],row[~i]=row[~i]^1,row[i]^1
         return A
+        
+        #OR
+        
+        output = []
+        for row in A:
+               row = row[::-1]
+               for num in range(len(row)):
+                    row[num]=1-row[num]
+               output.append(row)
+        return output
