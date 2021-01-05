@@ -1,0 +1,11 @@
+import statistics
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        res = []
+        for i in nums1:
+            res.append(i)
+        for j in nums2:
+            res.append(j)
+        val = statistics.median(res)
+        return val
+        
