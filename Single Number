@@ -7,3 +7,14 @@ class Solution:
             else:
                 s.remove(num)
         return s.pop()
+        
+        #OR#
+        
+        return 2*sum(set(nums))-sum(nums)
+        
+        #OR#
+        
+        a = 0
+        for i in nums:
+            a^=i
+        return a
