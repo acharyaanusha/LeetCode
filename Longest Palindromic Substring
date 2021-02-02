@@ -1,0 +1,21 @@
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        if not s or len(s)<1:
+            return ""
+        start = 0
+        end = 0
+        for i in range(len(s)):
+            len1 = self.expandAndCenter(s,i,i)
+            len2 = self.expandAndCenter(s,i,i+1)
+            n = max(len1,len2)
+            if n >(end - start):
+                start = i - (n-1)//2
+                end = i + n//2
+        return s[start:end+1]
+    
+   def expandAndCenter(self,s,left,right):
+        while left>0 and right<len(s) and s[left]=s[right]:
+            L-=1
+            R+=1
+        return R-L+1
+        
