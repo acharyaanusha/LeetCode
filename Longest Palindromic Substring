@@ -14,8 +14,8 @@ class Solution:
         return s[start:end+1]
     
    def expandAndCenter(self,s,left,right):
-        while left>0 and right<len(s) and s[left]=s[right]:
-            L-=1
-            R+=1
-        return R-L+1
+        while left>0 and right<len(s) and s[left]==s[right]:
+            left-=1
+            right+=1
+        return right-left+1
         
