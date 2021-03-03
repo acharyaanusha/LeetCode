@@ -2,5 +2,7 @@ from collections import Counter
 class Solution:
     def distributeCandies(self, candyType: List[int]) -> int:
         n = len(candyType)//2
-        s = set(candyType)
-        return min(n,len(s))
+        s = len(set(candyType))
+        if n > s:
+            return s
+        return n
