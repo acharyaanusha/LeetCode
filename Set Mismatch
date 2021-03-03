@@ -1,0 +1,27 @@
+class Solution:
+    def findErrorNums(self, nums: List[int]) -> List[int]:
+        nums.sort()
+        missing =1
+        for i in range(1,len(nums)):
+            if nums[i]==nums[i-1]:
+                duplicate = nums[i]
+            if nums[i]>nums[i-1]+1:
+                missing = nums[i-1]+1
+        if nums[len(nums)-1]!=len(nums):
+            missing = len(nums)
+        return [duplicate,missing]
+        
+        #OR#
+        
+        res = []
+        val = []
+        for i in nums:
+            if i in res:
+                val.append(i)
+            else:
+                res.append(i)
+        for i in range(1,len(nums)+1):
+            if i not in res:
+                val.append(i)
+                break
+        return val
