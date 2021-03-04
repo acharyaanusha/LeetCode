@@ -4,3 +4,8 @@ class Solution:
         for i in range(n+1):
             if i not in nums:
                 return i
+     ##OR##
+     
+        n = len(nums)
+        actual = (n*(n+1))//2
+        return actual - sum(nums)
