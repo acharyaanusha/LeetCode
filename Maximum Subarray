@@ -1,0 +1,12 @@
+class Solution:
+      def maxSubArray(self, nums:List[int])->int:
+            #Take the first element from the list
+            cur_sub = max_sub = nums[0]
+            
+            #Start checking with the second elemenet
+            for num in nums[1:]:
+                  #If first element is negative, we can discard it
+                  cur_sub = max(num, cur_sub+num)
+                  max_sub = max(max_sub, cur_sub)
+            
+            return max_sub
