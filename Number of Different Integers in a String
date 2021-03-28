@@ -1,0 +1,12 @@
+import re
+class Solution:
+    def numDifferentIntegers(self, word: str) -> int:
+        res = []
+        for c in word:
+            if c.isalpha():
+                word = word.replace(c," ")  
+        
+        res = word.split()
+        res = [int(i) for i in res]
+        return len(list(set(res)))
+        
