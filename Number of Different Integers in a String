@@ -2,11 +2,15 @@ import re
 class Solution:
     def numDifferentIntegers(self, word: str) -> int:
         res = []
+        #Step 1: Replace all the alphabets to space
         for c in word:
             if c.isalpha():
                 word = word.replace(c," ")  
         
+        #Step 2: Split the string into individual numbers
         res = word.split()
+        #Step 3: Convert the list into an integer list
         res = [int(i) for i in res]
+        #Step 4: Make it into a set to identify only unique numbers and return the length of the resulting set
         return len(list(set(res)))
         
