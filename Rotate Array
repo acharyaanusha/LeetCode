@@ -4,3 +4,10 @@ class Solution:
         Do not return anything, modify nums in-place instead.
         """
         nums[:] = nums[len(nums)-k:]+nums[:len(nums)-k]
+        
+        ##OR##
+        
+        new = [0]*len(nums)
+        for i in range(len(nums)):
+                new[(i+k)%len(nums)]=nums[i]
+        nums[:] = new
