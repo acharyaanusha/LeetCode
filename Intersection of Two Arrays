@@ -7,3 +7,10 @@ class Solution:
             if i in nums2:
                 res.append(i)
         return res
+        
+        ###OR###
+
+        nums1 = set(nums1)
+        nums2 = set(nums2)
+        
+        return nums1 & nums2
