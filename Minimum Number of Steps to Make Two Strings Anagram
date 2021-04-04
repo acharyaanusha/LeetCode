@@ -4,3 +4,9 @@ class Solution:
         d = collections.Counter(t)
         c.subtract(t)
         return sum(i for i in c.values() if i>=0)
+        
+        ##OR##
+        c = Counter(s)
+        d = Counter(t)
+        e = (c|d)-c(&d)
+        return sum(e.values())//2
