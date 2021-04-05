@@ -1,0 +1,16 @@
+class Solution:
+    def minOperations(self, s: str) -> int:
+        
+        n = len(s)
+        count1 = 0
+        count2 = 0
+        match1 = '01'*(n)
+        
+        match2 = '10'*(n)
+        for i in range(n):
+            if s[i]!=match1[i]:
+                count1+=1
+            if s[i]!=match2[i]:
+                count2+=1
+        return min(count1,count2)
+        
