@@ -12,3 +12,13 @@ class Solution:
                 else:
                     l[i][j]=max(l[i-1][j],l[i][j-1])
         return l[n][m]
+        
+        #OR#
+        for i,c1 in enumerate(text1):
+            for j,c2 in enumerate(text2):
+                if c1==c2:
+                    l[i][j]=l[i-1][j-1]+1
+                else:
+                    l[i][j]=max(l[i-1][j],l[i][j-1])
+        return l[n-1][m-1]
+
