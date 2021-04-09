@@ -1,0 +1,9 @@
+class Solution:
+    def customSortString(self, S: str, T: str) -> str:
+        r = ""
+        for c in S:
+            if c in T:
+                n = T.count(c)
+                r+=c*n
+                T = T.replace(c,"")
+        return T+r
