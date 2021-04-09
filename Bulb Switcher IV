@@ -1,0 +1,10 @@
+class Solution:
+    def minFlips(self, target: str) -> int:
+        cur = '0'
+        res = 0
+        for c in target:
+            if c==cur:
+                continue
+            cur=c
+            res+=1
+        return res
