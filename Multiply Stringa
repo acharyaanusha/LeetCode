@@ -8,4 +8,16 @@ class Solution:
             b= 10*b+(ord(j)-ord("0"))
         return str(a*b)
         
+        #OR#
+        a=0
+        b=0
+        for i in num1:
+            val = ord(i)-ord("0")
+            
+            a= 10*a+val
+        for j in num2:
+            val = ord(j)-ord("0")
+            b= 10*b+val
+        res = a*b
+        return str(res)
             
