@@ -1,15 +1,13 @@
 class Solution:
-    def fizzBuzz(self, n: int) -> List[str]:
-        ans = []
-        for i in range(1,n+1):
-            by3= (i%3==0)
-            by5 = (i%5==0)
-            if by3 and by5:
-                ans.append("FizzBuzz")
-            elif by3:
-                ans.append("Fizz")
-            elif by5:
-                ans.append("Buzz")
+    def search(self, nums: List[int], target: int) -> int:
+        left = 0
+        right = len(nums)-1
+        while left<=right:
+            mid = (left+right)//2
+            if target == nums[mid]:
+                return mid
+            elif nums[mid]>target:
+                right = mid-1
             else:
-                ans.append(str(i))
-        return ans
+                left = mid+1
+        return -1
