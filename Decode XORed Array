@@ -7,3 +7,10 @@ class Solution:
             res.append(temp)
         res.insert(0,first)
         return res
+        
+        #OR#
+        for i in range(len(encoded)):
+            first, encoded[i]=encoded[i],first
+            first=first^encoded[i]
+        encoded.append(first)
+        return encoded
