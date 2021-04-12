@@ -1,0 +1,9 @@
+class Solution:
+    def decode(self, encoded: List[int], first: int) -> List[int]:
+        res = []
+        res.append(encoded[0]^first)
+        for i in range(1,len(encoded)):
+            temp = res[i-1]^encoded[i]
+            res.append(temp)
+        res.insert(0,first)
+        return res
