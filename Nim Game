@@ -1,0 +1,3 @@
+class Solution:
+    def canWinNim(self,n:int)->bool:
+        return n%4!=0  #If you have less than 4 you can win if you have 4 the opponent has higher probability of winning
