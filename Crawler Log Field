@@ -11,3 +11,18 @@ class Solution:
                 stack.append(i)
                 
         return len(stack)
+        
+        #OR#
+        class Solution:
+    def minOperations(self, logs: List[str]) -> int:
+        x = 0
+        for i in logs:
+            if i=="./":
+                continue
+            elif i== "../":
+                if x:
+                    x-=1
+            else:
+                x+=1
+                
+        return x
