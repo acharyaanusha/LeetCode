@@ -15,3 +15,15 @@ class Solution:
             else:
                 s2.append(j)
         return s1==s2
+    #OR#
+    
+        def build(s:str):
+            s1 = []
+            for i in s:
+                if i=="#":
+                    if s1:
+                        s1.pop()
+                else:
+                    s1.append(i)
+            return s1
+        return build(s)==build(t)
