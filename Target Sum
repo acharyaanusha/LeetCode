@@ -1,0 +1,23 @@
+#Based on 0/1 Knapsack Problem
+class Solution:
+    def findTargetSumWays(self, nums: List[int], target: int) -> int:
+        
+        n = sum(nums)
+        if target>n:
+            return 0
+        if (target+n)%2!=0:
+            return 0
+        m = (target+n)//2
+        nums.sort()
+        dp = [[0]*(m+1) for _ in range(len(nums)+1)]
+        
+        for X in range(len(dp)):
+            dp[X][0] = 2**(nums.count(0))
+        for i in range(1,len(dp)):
+            for j in range(1,len(dp[0])):
+                
+                if nums[i-1]<=j:
+                    dp[i][j]=dp[i-1][j]+dp[i-1][j-nums[i-1]]
+                else:
+                    dp[i][j]=dp[i-1][j]
+        return dp[-1][-1]
