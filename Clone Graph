@@ -24,3 +24,7 @@ class Solution:
         #return from the same start point in visited
         return self.visited[node]
         
+#OR#
+
+#Mock/Simple Solution
+        return copy.deepcopy(node)
