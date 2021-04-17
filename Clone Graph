@@ -1,0 +1,26 @@
+"""
+# Definition for a Node.
+class Node:
+    def __init__(self, val = 0, neighbors = None):
+        self.val = val
+        self.neighbors = neighbors if neighbors is not None else []
+"""
+
+class Solution:
+    def __init__(self):
+        self.visited = {}
+    def cloneGraph(self, node: 'Node') -> 'Node':
+        if not node: return None
+        #in visited create Node with the value and store at the Node location
+        self.visited[node]= Node(node.val)
+        #for each neighbor
+        for n in node.neighbors:
+            #if neighbor Node hasn't been yet created
+            if n not in self.visited:
+                #create the node for the neighbor in self.visited using recursion
+                self.visited[n]=self.cloneGraph(n)
+            #if neighbor exists then just map it to the node's neighbor list
+            self.visited[node].neighbors.append(self.visited[n])
+        #return from the same start point in visited
+        return self.visited[node]
+        
