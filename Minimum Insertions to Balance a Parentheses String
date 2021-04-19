@@ -1,0 +1,16 @@
+class Solution:
+    def minInsertions(self, s: str) -> int:
+        ans = 0
+        s = s.replace("))","]")
+        ans+=s.count(")")
+        s = s.replace(")",']')
+        bal = 0
+        for i,v in enumerate(s):
+            if v == "(":
+                bal+=1
+            elif v=="]":
+                bal-=1
+            if bal==-1:
+                ans+=1
+                bal+=1
+        return ans+bal*2
