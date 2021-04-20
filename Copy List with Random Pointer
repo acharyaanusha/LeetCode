@@ -33,3 +33,6 @@ class Solution:
             curr = curr.next
             copy = copy.next
         return temp
+
+    ##OR##
+    return copy.deepcopy(head)
