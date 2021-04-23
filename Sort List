@@ -6,7 +6,6 @@
 class Solution:
     def sortList(self, head: ListNode) -> ListNode:
         arr = []
-        dummy = head
         while head:
             arr.append(head.val)
             head = head.next
