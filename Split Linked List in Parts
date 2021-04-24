@@ -1,0 +1,28 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def splitListToParts(self, root: ListNode, k: int) -> List[ListNode]:
+        cur = root
+        count = 0
+        while cur:
+            cur = cur.next
+            count+=1
+        width,rem = divmod(count,k)
+        ans = [None for i in range(k)]
+        
+        pre = None
+        cur = root
+        for x in range(k):
+            ans[x]=cur
+            for j in range(width+(1 if rem>0 else 0)):
+                pre = cur
+                if cur:
+                    cur = cur.next
+            if pre:
+                pre.next =None
+            rem-=1
+            
+        return ans
