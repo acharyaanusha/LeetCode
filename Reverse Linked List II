@@ -5,6 +5,8 @@
 #         self.next = next
 class Solution:
     def reverseBetween(self, head: ListNode, left: int, right: int) -> ListNode:
+        if not head:
+            return None
         cur, prev = head, None
         while left>1:
             prev = cur
