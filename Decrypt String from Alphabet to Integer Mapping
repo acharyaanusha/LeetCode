@@ -1,0 +1,18 @@
+class Solution:
+    def freqAlphabets(self, s: str) -> str:
+        stack = []
+        start = ord('a')-1
+        for i in s:
+            res = 0
+            if i == '#':
+                a = int(stack.pop())
+                b = int(stack.pop())
+                res = b*10+a
+                stack.append(chr(start+res))
+                continue
+            stack.append(i)
+        for i,c in enumerate(stack):
+            if c.isdigit():
+                stack[i]=chr(start+int(c))
+        return "".join(stack)
+            
