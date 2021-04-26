@@ -15,4 +15,19 @@ class Solution:
             if c.isdigit():
                 stack[i]=chr(start+int(c))
         return "".join(stack)
-            
+    
+    ##OR##
+       
+    def freqAlphabets(self, s: str) -> str:
+        def alpha(string):
+            return chr(int(string)+ord('a')-1)
+        stack = []
+        i = len(s)-1
+        while i>=0:
+            if s[i]=='#':
+                stack.append(alpha(s[i-2:i]))
+                i-=3
+            else:
+                stack.append(alpha(s[i]))
+                i-=1
+        return ''.join(reversed(stack))
