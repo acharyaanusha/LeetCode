@@ -11,5 +11,15 @@ class Solution:
             return root
         elif root.val>val:
             return self.searchBST(root.left,val)
-        else:
-            return self.searchBST(root.right,val)
+        return self.searchBST(root.right,val)
+            
+      ##OR##
+        if not root:
+            return
+        while root:
+            if root.val == val:
+                return root
+            elif root.val>val:
+                root = root.left
+            else:
+                root= root.right
