@@ -4,3 +4,14 @@ class Solution:
             return N
         else:
             return self.fib(N-1)+self.fib(N-2)
+            
+     ##OR##
+        if n<=1: return n
+        
+        def recur_fib(n):
+            cache = {0:0,1:1}
+            for i in range(2,n+1):
+                cache[i] = cache[i-1]+cache[i-2]
+            
+            return cache[n]
+        return recur_fib(n)
