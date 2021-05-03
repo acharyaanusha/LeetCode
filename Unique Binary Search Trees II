@@ -1,0 +1,19 @@
+ def generateTrees(self, n: int) -> List[TreeNode]:
+        if n<1:
+            return []
+        return self.generate(1,n)
+    def generate(self,low,high):
+        ans = []
+        if low>high:
+            ans.append(None)
+            return ans
+        for i in range(low,high+1):
+            leftSub = self.generate(low,i-1)
+            rightSub = self.generate(i+1,high)
+            for left in leftSub:
+                for right in rightSub:
+                    root = TreeNode(i)
+                    root.left = left
+                    root.right = right
+                    ans.append(root)
+        return ans
