@@ -5,3 +5,11 @@ def largestAltitude(self, gain: List[int]) -> int:
             sum+=i
             res.append(sum)
         return max(res)
+        
+        #OR#
+        maxi = 0
+        sum = 0
+        for i in gain:
+            sum+=i
+            maxi = max(maxi,sum)
+        return maxi
