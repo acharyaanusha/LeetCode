@@ -1,0 +1,16 @@
+class Solution:
+    def isPossible(self, target: List[int]) -> bool:
+        heap =[]
+        s = sum(target)
+        for num in target:
+            heappush(heap,-num)
+        while True:
+            elem = -heappop(heap)
+            if elem==1:
+                return True
+            if elem==s:
+                return False
+            cand = (elem-1)%(s-elem)+1
+            if cand==elem:return False
+            heappush(heap,-cand)
+            s=s-elem+cand
